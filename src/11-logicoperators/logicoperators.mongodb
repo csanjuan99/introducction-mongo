@@ -1,0 +1,57 @@
+use("sample_training")
+
+
+// implicit and
+db.inspections.find({
+  sector: "Tax Preparers - 891",
+  result: "Unable to Locate"
+}).count()
+
+// and explicit
+// $and: [ {}, {}, {}]
+db.inspections.find({
+  $and: [
+    { sector: "Tax Preparers - 891" },
+    { result: "Unable to Locate" }
+  ]
+}).count()
+
+// or explicit
+// $or: [ {}, {}, {}]
+db.inspections.find({
+  $or: [
+    { sector: "Tax Preparers - 891" },
+    { result: "Unable to Locate" }
+  ]
+}).count()
+
+// nor
+// $nor: [ {}, {}, {}]
+// exclude all documents that not contains the sector or the result
+db.inspections.find({
+  $nor: [
+    { sector: "Tax Preparers - 891" },
+    { result: "Unable to Locate" }
+  ]
+}).count()
+
+// $and + $or explicit with projection
+db.routes.find({
+  airplane: "E70",
+  $or: [
+    { dst_airport: "BOG"},
+    { src_airport: "BOG"}
+  ]
+},{
+  airplane: 1,
+  dst_airport: 1,
+  src_airport: 1,
+  _id: 0
+})
+
+// $not explicit
+// is used to attributes not array or objects
+// its able to use with regex
+db.inspections.find(
+  result: { $not: { $regex: /Unable to Locate/ } }
+}).count()

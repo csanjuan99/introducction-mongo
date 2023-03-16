@@ -1,0 +1,18 @@
+use('intro_to_mongo')
+
+
+db.products.updateOne(
+  // Query to find the element
+  { _id: 1},
+  // Changes to the document with operators
+   {
+    $set: {
+      name: "New Name",
+      color: "New Color",
+      tags: ["tag1", "tag2"]
+      },
+    $inc: {
+      stock: 10
+    }
+   }
+)

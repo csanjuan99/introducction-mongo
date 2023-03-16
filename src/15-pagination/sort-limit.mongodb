@@ -1,0 +1,7 @@
+use("sample_training")
+
+// 1 = asc
+// -1 = desc
+db.zips.find({ pop: { $gt: 100 } })
+.sort( { pop: 1 } ) // sorting by population in ascending order
+.limit( 5 ) // limit to 5 results

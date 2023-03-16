@@ -1,0 +1,17 @@
+use("intro_to_mongo")
+
+
+// using $eq
+// implicit
+// db.inventory.find({ qty: 20 })
+// =
+// explicit
+// db.inventory.find({ qty: { $eq: 20 } })
+// query by subdocument fiedl, you should use doble quotes
+// for the field name
+db.inventory.find({ "item.code" : { $eq : "123"} })
+
+
+// using $ne
+// just with explicit syntax
+db.inventory.find({ qty: { $ne: 20 } })

@@ -1,0 +1,13 @@
+use("sample_training")
+
+// Comparision
+db.trips.find({
+  $expr: {
+    $and: [
+     { $eq: ["$start station id", "$end station id"] }, // starts == end
+    //  { tripduration: { $gt: 1200 } }
+    { $gt: [ "$tripduration", 1200 ]}
+    ]
+  },
+
+}).count()

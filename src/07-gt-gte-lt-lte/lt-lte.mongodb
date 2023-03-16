@@ -1,0 +1,7 @@
+use("intro_to_mongo")
+
+// less than - $lt
+// db.inventory.find({ qty: { $lt: 20 } })
+
+// less than or equal - $lte
+db.inventory.find({ qty: { $lte: 15 } })

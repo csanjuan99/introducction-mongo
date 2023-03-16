@@ -1,0 +1,24 @@
+use('intro_to_mongo')
+
+db.products.drop()
+
+// Insert with automatic Object ID
+// db.products.insertOne({
+//   name: 'Screwdriver',
+//   price: 19.99,
+//   department: 'Hardware',
+//   color: 'green',
+//   sales: 75,
+//   stock: 50
+// })
+
+// Insert with custom _id
+db.products.insertOne({
+  _id: 1,
+  name: 'Wrench',
+  price: 21.99,
+  department: 'Hardware',
+  color: 'orange',
+  sales: 70,
+  stock: 50
+})

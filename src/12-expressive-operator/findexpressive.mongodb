@@ -1,0 +1,3 @@
+use("intro_to_mongo")
+
+db.monthlyBudget.find()

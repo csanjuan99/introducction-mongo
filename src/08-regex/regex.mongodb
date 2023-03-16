@@ -1,0 +1,12 @@
+use("intro_to_mongo")
+
+db.inventory.find(
+  {
+    //  "item.description" : { $regex: /.*line/i} // contains with i for case insensitive
+    //  "item.description" : { $regex: /.*line$/i} // ends with
+    //  "item.description" : { $regex: /^single/i} // starts with
+    //  "item.description" : { $regex: /^s/i} // starts with
+     "item.description" : { $regex: /^s/im} // starts multiline
+
+  }
+)

@@ -1,0 +1,8 @@
+use("sample_training")
+
+// projection: concept of selecting only the fields you want to see
+
+db.trips.find(
+  { tripduration: { $lte: 200}},
+  { tripduration: 1, _id: 0 }
+)

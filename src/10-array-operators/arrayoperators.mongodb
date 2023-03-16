@@ -1,0 +1,47 @@
+use("intro_to_mongo")
+
+
+// $in -> values & arrays
+// value
+// db.inventory.find({ qty: { $in: [20, 25] } }) // or
+//array
+// inside tags array exists "electronics" or "book"
+// db.inventory.find({ tags: { $in: ["electronics", "book"] } }) // or
+
+// $nin -> values & arrays
+// value
+// find all documents where qty is not 20 or 25
+// db.inventory.find({ qty: { $nin: [20, 25] } }) // or
+//array
+// db.inventory.find({ tags: { $nin: ["electronics", "book"] } }) // or
+
+// $all -> array
+// find all documents where tags array contains "electronics" and "book"
+// first of all-> normal examples
+// db.inventory.find({ tags: "book"})
+// to find like this, the order important
+// db.inventory.find({ tags: ["school", "book"]})
+// array
+// db.inventory.find({ tags: { $all: ["book", "school"]}}) // and
+
+// $size -> array
+// find all documents where tags array contains n elements
+// db.inventory.find({ tags: { $size: 3 }}) // count
+
+// $elemetMatch -> array with objects inside
+// find all documents where results array contains
+// at least one object with score greater than 8
+db.survey.find(
+  {
+    results:
+    {
+      $elemMatch: {
+        score: { $gte: 8 },
+        product: "xyz"
+        }
+      }
+    }
+  )
+
+
+

@@ -1,0 +1,8 @@
+use("intro_to_mongo")
+
+db.inventory.find(
+  {
+    qty: { $gt: 15, $lte: 30 },
+    "item.code": { $ne: "123"}
+  },
+  )

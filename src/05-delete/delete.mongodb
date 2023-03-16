@@ -1,0 +1,18 @@
+use('intro_to_mongo')
+
+// With number like id
+db.products.deleteOne({ _id: 1})
+
+// With ObjectId
+db.products.deleteOne({ _id: ObjectId('6411c70dbba9dfe80ebfbd67')})
+
+// Delete many with caracteristics
+db.products.deleteMany({ department: 'Hardware' })
+
+// findOneAndDelete
+// Hace el mismo funcionamiento pero este devuelve el documento borrado
+
+// Elimina todo en la coleccion
+db.products.drop()
+
+db.products.find({})

@@ -1,0 +1,16 @@
+use("intro_to_mongo")
+
+// db.monthlyBudget.find({ spent: { $gt: 100 } })
+// using expressive operators
+// db.monthlyBudget.find({
+//   $expr: {
+//     $gt: [ "$spent", 100 ]
+//   }
+// })
+
+// Comparision
+db.monthlyBudget.find({
+  $expr: {
+    $gt: [ "$spent", "$budget" ]  // spent > budget
+  }
+})

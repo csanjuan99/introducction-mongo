@@ -1,0 +1,43 @@
+use('intro_to_mongo')
+
+db.products.drop()
+
+db.products.insertMany([
+  {
+    _id: 1,
+    name: 'Hammer',
+    price: 9.99,
+    department: 'Hardware',
+    color: 'red',
+    sales: 80,
+    stock: 50
+  },
+  {
+    _id: 2,
+    name: 'Screwdriver',
+    price: 19.99,
+    department: 'Hardware',
+    color: 'green',
+    sales: 75,
+    stock: 50
+  },
+  {
+    _id: 3,
+    name: 'Wrench',
+    price: 21.99,
+    department: 'Hardware',
+    color: 'orange',
+    sales: 70,
+    stock: 50
+  },
+  {
+    name: 'Saw',
+    price: 11.99,
+    department: 'Hardware',
+    color: 'blue',
+    sales: 5,
+    stock: 5
+  },
+], {
+  ordered: false
+})

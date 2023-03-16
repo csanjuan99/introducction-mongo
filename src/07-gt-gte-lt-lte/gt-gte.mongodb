@@ -1,0 +1,7 @@
+use("intro_to_mongo")
+
+// greather than - $gt
+// db.inventory.find({ qty: { $gt: 20 } })
+
+// greather than or equal - $gte
+db.inventory.find({ qty: { $gte: 25 } })

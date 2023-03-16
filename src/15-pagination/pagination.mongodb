@@ -1,0 +1,6 @@
+use("intro_to_mongo")
+
+db.categories
+.find()
+.skip(0)
+.limit(2)

@@ -1,0 +1,12 @@
+use("intro_to_mongo")
+
+
+db.inventory.updateMany(
+  //query - operators
+  { qty: { $ne: 20 } },
+  // update - operators
+  // inc
+  {
+    $inc: { qty: 10 }
+  }
+  )
