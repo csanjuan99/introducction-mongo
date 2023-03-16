@@ -2,5 +2,5 @@ use("intro_to_mongo")
 
 db.categories
 .find()
-.skip(0)
+.skip(4)
 .limit(2)
